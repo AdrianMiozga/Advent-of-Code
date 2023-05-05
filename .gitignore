@@ -1,1 +1,6 @@
+# IntelliJ IDEA files
+.idea/
+out/
+
+# Input files
 *.txt
