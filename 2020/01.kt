@@ -1,13 +1,17 @@
 import java.io.File
 
+private const val FILENAME = "2020/01.txt"
+
 fun main() {
     partOne()
     partTwo()
 }
 
+/**
+ * O(n^2)
+ */
 fun partOne() {
-    // O(n^2)
-    val lines = File("2020/01.txt").readLines().map(String::toInt)
+    val lines = File(FILENAME).readLines().map(String::toInt)
 
     for (first in lines) {
         for (second in lines) {
@@ -19,9 +23,11 @@ fun partOne() {
     }
 }
 
+/**
+ * O(n^3)
+ */
 fun partTwo() {
-    // O(n^3)
-    val lines = File("2020/01.txt").readLines().map(String::toInt)
+    val lines = File(FILENAME).readLines().map(String::toInt)
 
     for (first in lines) {
         for (second in lines) {
