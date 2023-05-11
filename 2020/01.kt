@@ -10,7 +10,7 @@ fun main() {
 /**
  * O(n^2)
  */
-fun partOne() {
+private fun partOne() {
     val lines = File(FILENAME).readLines().map(String::toInt)
 
     for (first in lines) {
@@ -26,7 +26,7 @@ fun partOne() {
 /**
  * O(n^3)
  */
-fun partTwo() {
+private fun partTwo() {
     val lines = File(FILENAME).readLines().map(String::toInt)
 
     for (first in lines) {
