@@ -1,6 +1,6 @@
 import java.io.File
 
-private const val FILENAME = "2020/01.txt"
+private const val FILENAME = "2020/01/01.txt"
 
 fun main() {
     partOne()

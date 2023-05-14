@@ -1,6 +1,6 @@
 import java.io.File
 
-private const val FILENAME = "2020/02.txt"
+private const val FILENAME = "2020/02/02.txt"
 private val REGEX = Regex("""(\d+)-(\d+)\s(\w):\s(\w+)""")
 
 // No input validation done as it is always correct
