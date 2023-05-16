@@ -5,7 +5,7 @@ santa = True
 
 places = [[0, 0]]
 
-with open("03.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         for ch in line:
             if ch == ">":
@@ -42,6 +42,5 @@ for x in places:
     if x not in unique_places:
         unique_places.append(x)
 
-print(unique_places)
 print(len(places))
 print(len(unique_places))

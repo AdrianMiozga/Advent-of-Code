@@ -1,6 +1,6 @@
 import java.io.File
 
-private const val FILENAME = "2020/03/03.txt"
+private const val FILENAME = "2020/03/input.txt"
 private const val TREE = '#'
 
 fun main() {

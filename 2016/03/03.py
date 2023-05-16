@@ -1,7 +1,7 @@
 # Part I
 possible_triangles = 0
 
-with open("03.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         sides = sorted(list(map(int, line.split())))
 
@@ -14,7 +14,7 @@ print(f"Part I: {possible_triangles}")
 matrix = []
 
 for i in range(0, 3):
-    with open("03.txt", "r") as file:
+    with open("input.txt", "r") as file:
         for line in file:
             matrix += [int(line.split()[i])]
 

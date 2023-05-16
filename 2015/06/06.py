@@ -3,7 +3,7 @@ import re
 count_matrix = [[0] * 1000 for _ in range(1000)]
 brightness_matrix = [[0] * 1000 for _ in range(1000)]
 
-with open("06.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         x1, y1, x2, y2 = [int(x) for x in re.findall(r"\d+", line.strip())]
 

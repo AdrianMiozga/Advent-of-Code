@@ -1,7 +1,7 @@
 food = []
 counter = 0
 
-with open("01.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         if line == "\n":
             food.append(counter)

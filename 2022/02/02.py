@@ -1,7 +1,7 @@
 # Part 1
 score = 0
 
-with open("02.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         opponent, me = line.split()
 
@@ -32,7 +32,7 @@ print(score)
 # Part 2
 score = 0
 
-with open("02.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         opponent, me = line.split()
 
