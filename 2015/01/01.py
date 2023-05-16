@@ -1,7 +1,7 @@
 opening_bracket = 0
 closing_bracket = 0
 
-with open("01.txt", "r") as file:
+with open("input.txt", "r") as file:
     for line in file:
         for ch in line:
             if ch == "(":
