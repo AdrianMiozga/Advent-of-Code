@@ -57,7 +57,7 @@ def part_two():
                     if angle < 0:
                         angle = 270
 
-                for i in range(steps):
+                for _ in range(steps):
                     if angle == 0:
                         y += 1
                     elif angle == 90:
@@ -67,7 +67,7 @@ def part_two():
                     else:
                         x -= 1
 
-                    if [x, y] in visited_places and twice == False:
+                    if [x, y] in visited_places and twice is False:
                         twice = True
                         print(abs(x) + abs(y))
 
