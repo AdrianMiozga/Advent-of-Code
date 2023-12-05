@@ -1,85 +1,70 @@
 import java.io.File
 
-private const val FILENAME = "2020/10/example-2.txt"
+private const val FILENAME = "2020/10/input.txt"
 
 fun main() {
-//    partOne()
+    partOne()
     partTwo()
 }
 
 private fun partOne() {
-    val lines = File(FILENAME).readLines().map { it.toInt() }.sorted()
+    val adapters =
+        File(FILENAME).readLines().map { it.toInt() }.sorted().toMutableList()
 
-    val adapterRating = lines.last() + 3
+    // Add device's built-in joltage adapter
+    adapters.addLast(adapters.last() + 3)
 
     var jolts = 0
     val differences: IntArray = intArrayOf(0, 0, 0)
 
-    for (number in lines) {
-        val difference = number - jolts
+    for (rating in adapters) {
+        val difference = rating - jolts
 
-        when (difference) {
-            1, 2, 3 -> {
-                differences[difference - 1]++
-            }
-
-            else -> {
-                println("ERROR: Difference bigger than 3")
-                return
-            }
-        }
-
+        differences[difference - 1]++
         jolts += difference
-    }
-
-    if (jolts <= adapterRating + 3) {
-        differences[2]++
     }
 
     println(differences[0] * differences[2])
 }
 
 private fun partTwo() {
-    val lines = File(FILENAME).readLines().map { it.toInt() }.sorted()
+    val adapters =
+        File(FILENAME).readLines().map { it.toInt() }.sorted().toMutableList()
 
-    println(lines)
+    // Add charging outlet
+    adapters.addFirst(0)
 
+    // Add device's built-in joltage adapter
+    adapters.addLast(adapters.last() + 3)
+
+    var result = 1L
     var index = 0
-    var combinations = 1
 
-    do {
-        if (index >= lines.size - 1) {
-            break
+    while (index < adapters.size - 1) {
+        var innerIndex = index + 1
+        var step = 1
+
+        while (adapters[innerIndex] == adapters[index] + innerIndex - index) {
+            step++
+            innerIndex++
         }
-
-        var step = 0
-
-        for (i in 1..3) {
-            if (lines[index + 1] == lines[index] + i) {
-                step++
-            }
-
-            if (index + 2 < lines.size) {
-                if (lines[index + 2] == lines[index] + i) {
-                    step++
-                }
-            }
-
-            if (index + 3 < lines.size) {
-                if (lines[index + 3] == lines[index] + i) {
-                    step++
-                }
-            }
-        }
-
-        println("$index - $step")
 
         index += step
 
-        if (step > 1) {
-            combinations += (step + 1)
-        }
-    } while (true)
+        when (step) {
+            3 -> {
+                result *= 2
+            }
 
-    println(combinations)
+            4 -> {
+                result *= 4
+            }
+
+            5 -> {
+                result *= 7
+            }
+        }
+    }
+
+    println(result)
 }
