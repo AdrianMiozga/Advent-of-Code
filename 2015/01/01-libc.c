@@ -8,6 +8,7 @@ void part_one()
 
     int floor = 0;
     int ch;
+
     while ((ch = fgetc(file)) != EOF)
     {
         if (ch == '(')
@@ -32,6 +33,7 @@ void part_two()
     int floor = 0;
     int index = 0;
     int ch;
+
     while ((ch = fgetc(file)) != EOF)
     {
         if (ch == '(')
