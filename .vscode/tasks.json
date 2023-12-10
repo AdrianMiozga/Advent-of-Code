@@ -1,5 +1,22 @@
 {
+  "version": "2.0.0",
   "tasks": [
+    {
+      "type": "shell",
+      "label": "Compile and run FASM",
+      "command": [
+        "fasm.exe",
+        "${file}",
+        "build\\${fileBasenameNoExtension}.exe",
+        "&&",
+        ".",
+        "build\\${fileBasenameNoExtension}.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": "**/*.asm"
+      }
+    },
     {
       "type": "cppbuild",
       "label": "C/C++: cl.exe build active file",
@@ -18,9 +35,8 @@
       "problemMatcher": ["$msCompile"],
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": "**/*.c"
       }
     }
-  ],
-  "version": "2.0.0"
+  ]
 }
