@@ -1,1 +1,2 @@
 *.p linguist-language=Pawn
+*.inc linguist-language=Assembly
