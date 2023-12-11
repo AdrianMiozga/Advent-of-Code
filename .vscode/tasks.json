@@ -6,15 +6,21 @@
       "label": "Compile and run FASM",
       "command": [
         "fasm.exe",
-        "${file}",
-        "build\\${fileBasenameNoExtension}.exe",
+        "'${file}'",
+        "'${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe'",
         "&&",
-        ".",
-        "build\\${fileBasenameNoExtension}.exe"
+        ".'${workspaceFolder}\\build\\${fileBasenameNoExtension}.exe'"
       ],
       "group": {
         "kind": "build",
         "isDefault": "**/*.asm"
+      },
+      "options": {
+        "cwd": "${fileDirname}",
+        "shell": {
+          "executable": "pwsh.exe",
+          "args": ["-NoProfile", "-Command"]
+        }
       }
     },
     {
