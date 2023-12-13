@@ -1,6 +1,7 @@
 import java.io.File
 
 private const val FILENAME = "2023/05/input.txt"
+private const val regex = """(\d+) (\d+) (\d+)"""
 
 fun main() {
     partOne()
@@ -10,8 +11,7 @@ fun main() {
 private fun partOne() {
     val file = File(FILENAME).readLines()
 
-    val seeds =
-        file[0].slice(7 until file[0].length).split(" ").map { it.toLong() }
+    val seeds = file[0].slice(7 until file[0].length).split(" ").map { it.toLong() }
 
     var result = Long.MAX_VALUE
 
@@ -36,13 +36,12 @@ private fun partOne() {
                 continue
             }
 
-            val (destination, source, range) = Regex("""(\d+) (\d+) (\d+)""").matchEntire(
+            val (destination, source, range) = Regex(regex).matchEntire(
                 line
-            )!!.destructured
+            )!!.destructured.toList().map { it.toLong() }
 
-            if (transformed >= source.toLong() && transformed < source.toLong() + range.toLong()) {
-                transformed =
-                    transformed - source.toLong() + destination.toLong()
+            if (transformed >= source && transformed < source + range) {
+                transformed = transformed - source + destination
                 skip = true
             }
         }
@@ -58,8 +57,7 @@ private fun partOne() {
 private fun partTwo() {
     val file = File(FILENAME).readLines()
 
-    val seeds =
-        file[0].slice(7 until file[0].length).split(" ").map { it.toLong() }
+    val seeds = file[0].slice(7 until file[0].length).split(" ").map { it.toLong() }
 
     for (location in 0 until Long.MAX_VALUE) {
         var transformed = location
@@ -82,12 +80,12 @@ private fun partTwo() {
                 continue
             }
 
-            val (destination, source, range) = Regex("""(\d+) (\d+) (\d+)""").matchEntire(
+            val (destination, source, range) = Regex(regex).matchEntire(
                 line
-            )!!.destructured
+            )!!.destructured.toList().map { it.toLong() }
 
-            if (transformed >= destination.toLong() && transformed < destination.toLong() + range.toLong()) {
-                transformed = transformed - destination.toLong() + source.toLong()
+            if (transformed >= destination && transformed < destination + range) {
+                transformed = transformed - destination + source
                 skip = true
             }
         }
