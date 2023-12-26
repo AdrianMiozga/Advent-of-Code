@@ -2,7 +2,7 @@ format PE console 4.0
 entry start
 
 include 'macro/import32.inc'
-include 'contants.inc'
+include 'constants.inc'
 
 section '.text' code readable executable
 start:
