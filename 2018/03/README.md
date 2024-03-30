@@ -3,4 +3,4 @@
 ## Expected Results
 
 - Part 1: 101781
-- Part 2: TODO
+- Part 2: 909
