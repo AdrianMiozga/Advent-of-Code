@@ -1,4 +1,4 @@
-# [Day 02 of 2024](https://adventofcode.com/2024/day/02)
+# [Day 2 of 2024](https://adventofcode.com/2024/day/2)
 
 ## Expected Results
 
