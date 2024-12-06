@@ -2,7 +2,7 @@ venv/
 build/
 .idea/
 out/
-template/
 
 *.iml
 TODO.md
+cookie.txt
