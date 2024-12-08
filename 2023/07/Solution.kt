@@ -1,4 +1,7 @@
+package `2023`.`07`
+
 import java.io.File
+import kotlin.text.iterator
 
 private const val FILENAME = "2023/07/input.txt"
 

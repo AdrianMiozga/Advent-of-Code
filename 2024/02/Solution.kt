@@ -1,3 +1,5 @@
+package `2024`.`02`
+
 import java.io.File
 import kotlin.math.abs
 

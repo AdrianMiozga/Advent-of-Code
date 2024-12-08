@@ -1,3 +1,5 @@
+package `2015`.`14`
+
 import java.io.File
 
 private const val FILENAME = "2015/14/input.txt"

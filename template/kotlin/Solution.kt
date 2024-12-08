@@ -1,4 +1,7 @@
+package template.kotlin
+
 import java.io.File
+import aoc.utils.*
 
 private const val FILENAME = "YEAR/DAY/example.txt"
 

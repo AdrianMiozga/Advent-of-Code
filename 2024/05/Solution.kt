@@ -1,3 +1,5 @@
+package `2024`.`05`
+
 import java.io.File
 import kotlin.collections.mutableMapOf
 

@@ -1,4 +1,7 @@
+package `2020`.`14`
+
 import java.io.File
+import kotlin.collections.iterator
 
 private const val FILENAME = "2020/14/input.txt"
 private val pattern = Regex("""mem\[(\d+)] = (\d+)""")

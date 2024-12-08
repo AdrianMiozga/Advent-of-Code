@@ -41,15 +41,15 @@ def main():
         print(f"HTTP error: {exception.code} - {exception.reason}")
         sys.exit(1)
 
-    printable_day = day.zfill(2)
+    padded_day = day.zfill(2)
 
-    output_path = f"{year}/{printable_day}"
+    output_path = f"{year}/{padded_day}"
 
     # Create directories
     try:
         os.makedirs(output_path)
     except FileExistsError:
-        print(f"Error: Directory {year}/{printable_day} already exists")
+        print(f"Error: Directory {year}/{padded_day} already exists")
         sys.exit(1)
 
     # YEAR-README.md
@@ -90,8 +90,10 @@ def main():
     replace_in_file(
         join(output_path, "Solution.kt"),
         {
-            "DAY": printable_day,
+            "DAY": padded_day,
             "YEAR": year,
+            "template": f"`{year}`",
+            "kotlin": f"`{padded_day}`",
         },
     )
 
